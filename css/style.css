@@ -42,12 +42,12 @@ h1 {
   margin-top: 5px;
 }
 
-.project {
-  padding-bottom: 20px;
-}
-
 .location {
   margin-bottom: 0;
+}
+
+.project {
+  padding-bottom: 20px;
 }
 
 .author {
@@ -72,10 +72,6 @@ mark {
   color: #666666;
   text-align: justify;
   text-justify: inter-word;
-}
-
-.next {
-  margin-top: 10px;
 }
 
 ul {
