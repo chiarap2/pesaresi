@@ -23,15 +23,19 @@ body {
   text-align: right;
 }
 
+.link {
+  text-align: right;
+  margin: 0px;
+}
+
 h1 {
   font-weight: bold;
 }
 
 .day {
   font-weight: bold;
-  margin-bottom: 0px;
+  margin-bottom: -0.5rem !important;
 }
-
 
 .poster {
   width: 100%;
@@ -54,7 +58,7 @@ h1 {
   margin-right: 5px;
 }
 
-.next_title > a:nth-child(1) {
+.title {
   color: #FF6F00;
 }
 
@@ -146,7 +150,7 @@ a, a:hover {
     color: #eeeeee;
   }
 
-  .next_title > a:nth-child(1) {
+  .title {
     color: #FF8F00;
   }
 
