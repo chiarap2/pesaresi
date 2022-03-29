@@ -13,11 +13,6 @@ raw = """
     p.author #[span.me %%%AUTHOR%%%]
     h4.title.mb-1
       | %%%TITLE%%%
-    .btn-group.btn-group-sm(role="group",aria-label="Commands").mt-1
-      a(href="%%%CALENDAR%%%",target="_blank").btn.btn-primary
-        | #[i.bi.bi-calendar-event-fill] Add to Calendar
-      button.btn.btn-primary(type="button",data-bs-toggle="collapse",data-bs-target="#%%%TALK_ID%%%",aria-expanded="false",aria-controls="%%%TALK_ID%%%"%%%DISABLED%%%)
-        | #[i.bi.bi-file-earmark-text-fill] Abstract%%%SLIDES%%%
   .col-md-7
     p.abstract#%%%TALK_ID%%%.collapse.mt-2
         | %%%ABSTRACT%%%"""
@@ -32,16 +27,9 @@ raw_upcoming = """
     h1.day %%%DAY%%%
     h4.month.mb-0 %%%MONTH%%%
     p 15:00-16:00
-  .col-md-7.col-12.mt-sm-3.mt-lg-1
+  .col-md-12.col-12.mt-sm-3.mt-lg-1
       p
         | %%%ABSTRACT%%%
-  .col-md-4.d-grid.gap-2.d-md-block
-    a(href="%%%CALENDAR%%%",target="_blank").btn.btn-primary.mb-md-3.w-100
-      | #[i.bi.bi-calendar-event-fill] Add to Calendar
-    a(href="%%%MEET%%%").btn.btn-primary.mb-md-3.w-100
-      | #[i.bi.bi-camera-reels-fill] Live Streaming%%%SLIDES%%%
-    a(href="https://goo.gl/maps/FL4qcbB3MnMXrYS28",target="_blank").btn.btn-primary.w-100
-      | #[i.bi.bi-geo-alt-fill] Sala Seminari Est
       """
 
 slides_raw = """
@@ -197,7 +185,11 @@ if __name__ == '__main__':
         if future:
             f.write('.row.mt-4.mb-4\n')
             f.write('  h2 #[span.emoji 🔮] Next Talks\n')
+            n = 0
             for talk in future:
                 f.write(render_talk(talk))
+                if n == 5:
+                    break
+                n += 1
         else:
             f.write('')

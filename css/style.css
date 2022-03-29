@@ -86,9 +86,9 @@ ul {
 }
 
 @media only screen and (min-width : 1350px) {
-    .container {
-      max-width: 1080px;
-    }
+    /* .container { */
+    /*   max-width: 1080px; */
+    /* } */
 }
 
 .ai, .fa, .fab, .fas {
