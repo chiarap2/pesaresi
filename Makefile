@@ -5,6 +5,6 @@ all: index.html
 clean:
 	rm index.html
 
-index.html: $(addprefix src/, index.pug layout.pug next.pug upcoming.pug past.pug) Seminars.csv render.py
-	python render.py -u Seminars.csv
+index.html: src/ Seminars.csv render.py css/
+	python render.py Seminars.csv
 	pug --doctype html --pretty src/index.pug --out .
