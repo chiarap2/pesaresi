@@ -91,6 +91,9 @@ if __name__ == '__main__':
     else:
         now = dt.strptime(args.date, '%d/%m/%Y')
 
+    # Sort by date
+    talks.sort(key=lambda t: dt.strptime(t['Date'], '%d/%m/%Y'))
+
     # Filter talks
     talks = [talk for talk in talks if talk['Name']]
     future = [talk for talk in talks if dt.strptime(talk['Date'],
